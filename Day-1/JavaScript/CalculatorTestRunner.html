@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS Calculator - Test Runner</title>
+	<style>
+	.pass {
+		color : green;
+	}
+	.fail {
+		color : red;
+		text-decoration: line-through;
+		font-style: italic;
+	}
+	</style>
+	<script src="testLib.js"></script>
+	<script src="Calculator.js"></script>
+	<script src="CalculatorTests.js"></script>
+	<script>
+		window.addEventListener("DOMContentLoaded",calculatorTests)
+	</script>
+</head>
+<body>
+	<h1>Calculator</h1>
+	<hr>
+	<ul id="ulTestList">
+		
+	</ul>
+</body>
+</html>
