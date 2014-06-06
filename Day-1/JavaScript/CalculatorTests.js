@@ -112,7 +112,7 @@ function calculatorTests(){
 	});
 	test("Should be able to add nested array of numbers", function(){
 		//Arrange
-		var numbers=[10[20[30[40]]]],
+		var numbers=[10,[20,[30,[40]]]],
 			expectedResult = 100;
 		
 
