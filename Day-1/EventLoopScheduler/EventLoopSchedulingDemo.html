@@ -13,6 +13,8 @@
 			displayMessage("Work Started...");
 			doWork(function(){
 				displayMessage("Work Completed...");
+			},function(pc){
+				document.getElementById("workProgress").value=pc;
 			});
 				
 			
@@ -20,14 +22,18 @@
 		function displayMessage(msg){
 			document.getElementById("divMessages").innerHTML += msg + "<br/>";
 		}
-		function doWork(onCompletion){
+		function doWork(onCompletion, onProgress){
 			var totalIterations = 1000,
 				currentIteration = 0;
 			function oneIteration(){
 				for(var i=0;i<(100000/totalIterations);i++)
 					for(var j=0;j<1000;j++)
 						for(var k=0;k<100;k++){}
-				if (++currentIteration < totalIterations){
+				++currentIteration; 
+				if (typeof onProgress === "function"){
+					onProgress((currentIteration/totalIterations)*100)
+				}
+				if (currentIteration < totalIterations){
 					setTimeout(oneIteration);
 				} else {
 					if (typeof onCompletion === "function")
@@ -42,6 +48,10 @@
 <body>
 	<input type="text" name="" id="">
 	<input type="button" value="Do Work" id="btnDoWork">
+	<br>
+	<progress id="workProgress" min="0" max="100" value="0"></progress>
+
 	<div id="divMessages"></div>
+	
 </body>
 </html>
