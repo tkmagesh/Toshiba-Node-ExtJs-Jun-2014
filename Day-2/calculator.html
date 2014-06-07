@@ -12,10 +12,11 @@
 <body>
 	<h1>Calculator</h1>
 	<hr>
-	<form action="" method="get">
-	<div><label for="">Number 1:</label><input type="text" name="number1" id="txtNumber1"></div>
-	<div><label for="">Number 2:</label><input type="text" name="number2" id="txtNumber2"></div>
+	<form action="add" method="post">
+	<div><label for="">Number 1:</label><input type="text" name="number1" id="txtNumber1" value="{number1}"></div>
+	<div><label for="">Number 2:</label><input type="text" name="number2" id="txtNumber2" value="{number2}"></div>
 	<div><input type="submit" value="Add"></div>
+	<div><h3>{result}</h3></div>
 	</form>
 </body>
 </html>

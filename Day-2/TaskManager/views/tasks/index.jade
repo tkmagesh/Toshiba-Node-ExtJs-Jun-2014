@@ -1,0 +1,11 @@
+extends ..\layout
+block content
+	h1 Task Manager
+	hr
+	form(method="post")
+		span Task :
+		input(type="text", name="taskName")
+		input(type="submit", value="Add Task")
+	ul
+		each task in list
+			li=task
