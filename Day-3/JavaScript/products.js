@@ -23,3 +23,32 @@ function sort(){
 }
 
 //Modify the above function in such way that i can use the same funtion for sorting by any attribute
+
+function sort(list,valueSelectorFn){
+	for(var i=0;i<products.length-1;i++)
+    for(var j=i+1;j<products.length;j++){
+        var left = products[i], right = products[j];
+        if (valueSelectorFn(left) > valueSelectorFn(right){
+            products[i] = products[j];
+            products[j] = left;
+         }
+    }	
+}
+
+function filter(list,criteriaFn){
+	var result=[];
+	for(var i=0;i<list.length;i++)
+		if (criteriaFn(list[i]))
+			result.push(list[i]);
+	return result;
+}
+
+function groupBy(list,attrName){
+	var result = {};
+	for(var i=0;i<list.length;i++){
+		var key = list[i][attrName];
+		result[key] = result[key] || [];
+		result[key].push(list[i]);
+	}
+	return result;
+}

@@ -8,4 +8,7 @@ block content
 		input(type="submit", value="Add Task")
 	ul
 		each task in list
-			li=task
+			if task.isCompleted
+				li(task-id=task.id,class="completed")=task.name
+			else
+				li(task-id=task.id)=task.name
