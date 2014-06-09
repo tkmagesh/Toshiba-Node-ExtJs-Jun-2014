@@ -8,3 +8,18 @@ var products = [
 	{id : 7, name : "zen", cost : 50 , units : 7 , category : 1},
 	{id : 8, name : "ken", cost : 70 , units : 5 , category : 2}
 ]
+
+//write a function that sorts the above collection by id
+
+function sort(){
+  for(var i=0;i<products.length-1;i++)
+    for(var j=i+1;j<products.length;j++){
+        var left = products[i], right = products[j];
+        if (left.id > right.id){
+            products[i] = products[j];
+            products[j] = left;
+         }
+    }
+}
+
+//Modify the above function in such way that i can use the same funtion for sorting by any attribute
