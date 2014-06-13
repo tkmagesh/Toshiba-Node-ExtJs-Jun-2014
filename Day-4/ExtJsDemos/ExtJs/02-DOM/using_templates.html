@@ -1,0 +1,37 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+<link rel="stylesheet" type="text/css" href="../../ext4/resources/css/ext-all.css" />
+<script type="text/javascript" src="../../ext4/ext-all-debug.js"></script>
+<style type="text/css">
+.myDiv {
+	border  : 1px solid #AAAAAA;
+	width   : 200;
+	cursor  : pointer;
+	padding : 2px 2px 2px 2px;
+	margin  : 2px 2px 2px 2px;
+}
+</style>
+
+<script type="text/javascript">
+
+Ext.onReady(function() {
+   /* var myTpl = new Ext.Template("<div>Hello {0} {1}.</div>");
+
+    myTpl.append(document.body, ['Magesh','Kuppan']);
+    myTpl.append(document.body, ['Michael','Schumacher']);
+    myTpl.append(document.body, ['Sebastian','Joseph']);*/
+
+     var myTpl = new Ext.Template("<div>Hello {firstName} {lastName}.</div>");
+
+    myTpl.append(document.body, {firstName : 'Magesh',lastName : 'Kuppan'});
+    myTpl.append(document.body, {firstName :'Michael',lastName : 'Schumacher'});
+    myTpl.append(document.body, {firstName :'Sebastian',lastName : 'Joseph'});
+
+});
+</script></head>
+<body>
+
+</body>
+</html>
